@@ -1,0 +1,38 @@
+<div style="text-align: center">
+  <h1 class="bank-header">
+      {{title}}
+  </h1>
+  <h2 class="giph-header">
+        When the groupchat is lit, search all the giphs:
+    </h2>
+</div>
+<div class="input-bank">
+    <input type="text" id='searchName' #searchName class="form-control" placeholder=" Search Giphs" name="searchName" [(ngModel)]="searchName.value" (ngModelChange)="getRestItems($event, limitNum)">
+  </div>
+  <div class="loadMore"><h3 class="loadResultsH3">Load Results:</h3>
+        <select class="loadIt" id="loadIt" [(ngModel)]="limitNum">
+                <option selected value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="500">500</option>
+              </select>
+              <!-- <h1> Showing {{limitNum}} Results</h1> -->
+    <!-- <button class="loadIt" (click)=addLimit()>Load More!</button> -->
+</div>
+<br>
+<div class="users-container">
+  <div class="giph" *ngFor="let giph of giphArray">
+      <!-- <h2 class="full-name">{{giph.fullName}}</h2> -->
+      <img src="{{giph}}" class="image" name="image"/>
+      <!-- <div class="content">
+        <p>{{card.streetLoc}}{{card.location}}</p>
+      </div>
+    </div> -->
+</div>
+</div>
+<br>
+<div class='liBox'>
+<br>
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="edwin-spencer-grier"><h4 class='attribution'> Brought to you by:</h4><a class="LI-simple-link" href='https://www.linkedin.com/in/edwin-spencer-grier?trk=profile-badge'>Edwin Spencer Grier</a></div>
+</div>
+<router-outlet></router-outlet>
